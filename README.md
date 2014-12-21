@@ -13,4 +13,15 @@ Usage
 
 First you have to define your `java_import_path` in your settings. The best path to use is the src.zip in your Java JDK.
 
-To add an import either mark all class names to import and press ctrl+alt+i or just press ctrl+alt+i and then enter the class name.
+To add an import either mark all class names to import and press `ctrl+alt+i` or just press `ctrl+alt+i` and then enter the class name.
+
+To add a library to your project, in your `.sublime-project` add
+<pre><code>"settings":
+{
+    "java_import_path":
+    [
+        "default/java/import/path/src.zip",
+        "path/to/library.jar"
+    ]
+}
+</code></pre>
