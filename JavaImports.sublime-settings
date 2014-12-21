@@ -1,0 +1,5 @@
+{
+	// Paths to source folder, .zip or .jar of java and used libraries
+	// (e.g. "C:/Program Files/Java/jdk1.7.0_25/src.zip", "C:/path/to/library/library.jar", "C:/path/to/library/src")
+	"java_import_path": []
+}
