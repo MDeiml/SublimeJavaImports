@@ -4,8 +4,10 @@ import os
 
 def get_classes_list(path):
 	if path.endswith(".zip") or path.endswith(".jar"):
-		print(path)
-		return zipfile.ZipFile(path, "r").namelist()
+		zipF = zipfile.ZipFile(path, "r")
+		classesList = zipF.namelist()
+		zipF.close()
+		return classesList
 	else:
 		classesList = []
 		for root, dirs, files in os.walk(path):
