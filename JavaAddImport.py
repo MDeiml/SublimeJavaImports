@@ -19,8 +19,10 @@ class JavaAddImportCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		settings = self.view.settings()
 		if not settings.has("java_import_path"):
-			sublime.error_message("You must first define \"java_import_path\" in your settings")
-			return
+			settings = sublime.load_settings("JavaImports.sublime-settings")
+			if not settings.has("java_import_path"):
+				sublime.error_message("You must first define \"java_import_path\" in your settings")
+				return
 		if len(settings.get("java_import_path")) == 0:
 			sublime.error_message("You must first define \"java_import_path\" in your settings")
 			return
