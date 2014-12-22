@@ -37,7 +37,6 @@ class JavaAddImportCommand(sublime_plugin.TextCommand):
 					result = name.replace("/",".").replace("\\",".").replace(".java","").replace(".class", "")
 					if result.startswith("."):
 						result = result[1:]
-					print(result)
 					results.append(result)
 
 			def finishUp(index):

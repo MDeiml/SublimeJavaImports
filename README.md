@@ -12,6 +12,7 @@ Usage
 -----
 
 First you have to define your `java_import_path` in your settings. The best path to use is the src.zip in your Java JDK.
+You can also use your android.jar as path to work with android classes.
 
 To add an import either mark all class names to import and press `ctrl+alt+i` or just press `ctrl+alt+i` and then enter the class name.
 
