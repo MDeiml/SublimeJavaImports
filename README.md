@@ -1,7 +1,7 @@
 SublimeJavaImports
 ==================
 
-JavaImports is a Sublime Text 2 plugin for automatically adding imports to your Java files. It resolves the package names by scanning through a source .zip or folder or a .jar file.
+JavaImports is a Sublime Text plugin for automatically adding imports to your Java files. It resolves the package names by scanning through a source .zip or folder or a .jar file.
 
 Installation
 ------------
