@@ -42,13 +42,8 @@ class JavaAddImportCommand(sublime_plugin.TextCommand):
 			def finishUp(index):
 				if index == -1:
 					return
-				for i in range(0,10000):
-					point = self.view.text_point(i,0)
-					region = self.view.line(point)
-					line = self.view.substr(region)
-					if "import" in line or "class" in line:
-						self.view.insert(edit,point,"import "+results[index]+";\n")
-						break
+				self.view.run_command("java_add_import_insert", {"classpath":results[index]})
+
 			if len(results) == 1:
 				finishUp(0)
 			elif len(results) > 1:
@@ -64,3 +59,13 @@ class JavaAddImportCommand(sublime_plugin.TextCommand):
 			allEmpty = False
 		if allEmpty:
 			self.view.window().show_input_panel("Class name: ", "", onDone, None, None)
+
+class JavaAddImportInsertCommand(sublime_plugin.TextCommand):
+		def run(self, edit, classpath):
+			for i in range(0,10000):
+				point = self.view.text_point(i,0)
+				region = self.view.line(point)
+				line = self.view.substr(region)
+				if "import" in line or "class" in line:
+					self.view.insert(edit,point,"import "+classpath+";\n")
+					break
